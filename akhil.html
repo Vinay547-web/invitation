@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="te">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Telugu Wedding Invitation</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Noto+Serif+Telugu:wght@400;700&display=swap" rel="stylesheet">
+
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}
+    body{
+      font-family:'Poppins', sans-serif;
+      background:#000;
+      overflow:hidden;
+    }
+
+    /* PAGE STYLE */
+    .page{
+      position:absolute;top:0;left:0;
+      width:100%;height:100vh;
+      display:flex;justify-content:center;align-items:center;
+      background-size:cover;
+      background-position:center;
+      opacity:0;
+      pointer-events:none;
+      transition:1.2s ease;
+    }
+    .active{
+      opacity:1;
+      pointer-events:auto;
+    }
+
+    /* Semi-transparent card */
+    .card{
+      width:90%;max-width:500px;
+      background:rgba(255,255,255,0.20);
+      padding:30px;
+      border-radius:24px;
+      backdrop-filter:blur(15px);
+      border:1px solid rgba(255,255,255,0.35);
+      text-align:center;
+      color:#fff;
+      animation:fadeInUp 1.2s ease;
+    }
+
+    @keyframes fadeInUp{
+      from{opacity:0;transform:translateY(40px)}
+      to{opacity:1;transform:translateY(0)}
+    }
+
+    /* Telugu decorative border */
+    .border{
+      width:100%;height:16px;
+      background-image:url('https://i.imgur.com/38xj7pV.png');
+      background-size:contain;
+      background-repeat:repeat-x;
+      margin-bottom:18px;
+    }
+
+    h1,h2,h3{font-family:'Noto Serif Telugu', serif;color:#ffe8b3}
+    p{color:#ffeccc;font-size:17px;margin-top:12px}
+
+    input{
+      width:90%;padding:15px;
+      border-radius:12px;border:none;
+      font-size:20px;
+      font-family:'Noto Serif Telugu';
+      margin-top:18px;text-align:center;
+    }
+
+    button{
+      padding:14px 26px;
+      font-size:18px;
+      border:none;border-radius:14px;
+      background:#ffb13d;color:#4d2600;
+      font-weight:600;
+      cursor:pointer;
+      margin-top:20px;
+    }
+
+    /* Background slides for cinematic effect */
+    .bg-fade{
+      animation:bgSlide 12s infinite alternate ease-in-out;
+    }
+    @keyframes bgSlide{
+      0%{background-size:105%}
+      100%{background-size:115%}
+    }
+
+    .map-img{width:100%;border-radius:20px;margin-top:18px}
+
+    /* Background audio */
+    audio{display:none}
+  </style>
+</head>
+<body>
+
+  <!-- Telugu Traditional Instrumental Background Music -->
+  <audio autoplay loop>
+    <source src="C:\Users\USER\Downloads\music.mp3" />
+  </audio>
+
+  <!-- PAGE 1: Name Input with Telugu Theme -->
+  <div id="page1" class="page active bg-fade" style="background-image:url("C:\Users\USER\Downloads\background.jpg");">
+    <div class="card">
+      <div class="border"></div>
+      <h2>మీ పేరు నమోదు చేయండి</h2>
+      <p>వ్యక్తిగత ఆహ్వానం కోసం మీ పేరును టైప్ చేయండి</p>
+      <input id="receiverInput" placeholder="మీ పేరు" />
+      <button onclick="goToInvitation()">తరువాత</button>
+      <div class="border"></div>
+    </div>
+  </div>
+
+  <!-- PAGE 2: Wedding Invitation (Mandapam Background) -->
+  <div id="page2" class="page bg-fade" style="background-image:url('https://i.imgur.com/7T8tHh1.jpeg');">
+    <div class="card">
+      <div class="border"></div>
+      <h3>Dear <span id="receiverName"></span>,</h3>
+      <p>మన తెలుగు సంప్రదాయ పెల్లీకి మిమ్మల్ని ఆహ్వానిస్తున్నాము</p>
+      <h1>Asha ❤️ Rahul</h1>
+      <p>20 December 2025 · సాయంత్రం 6 గంటలకు</p>
+      <button onclick="nextPage(3)">వేదిక వివరాలు</button>
+      <div class="border"></div>
+    </div>
+  </div>
+
+  <!-- PAGE 3: Venue Page + Couple Photo -->
+  <div id="page3" class="page bg-fade" style="background-image:url('https://i.imgur.com/kM9gkkM.jpeg');">
+    <div class="card">
+      <div class="border"></div>
+      <h2>వేదిక వివరాలు</h2>
+      <p>The Grand Ballroom<br>Mumbai</p>
+      <img class="map-img" src="https://i.imgur.com/NDy2W0t.jpeg" />
+      <button onclick="nextPage(4)">రూట్ చూడండి</button>
+      <div class="border"></div>
+    </div>
+  </div>
+
+  <!-- PAGE 4: Route Button (Telugu Art Background) -->
+  <div id="page4" class="page bg-fade" style="background-image:url('https://i.imgur.com/WSeH8C9.jpeg');">
+    <div class="card">
+      <div class="border"></div>
+      <h2>మీ ప్రయాణ రూట్</h2>
+      <p>Google Maps లో రూట్ చూడటానికి కింద క్లిక్ చేయండి</p>
+      <a id="routeLink" target="_blank"><button>Open Route</button></a>
+      <div class="border"></div>
+    </div>
+  </div>
+
+<script>
+  function goToInvitation(){
+    const name = document.getElementById('receiverInput').value.trim();
+    if(!name) return alert('Please enter your name');
+    document.getElementById('receiverName').textContent = name;
+    nextPage(2);
+  }
+
+  function nextPage(num){
+    document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+    document.getElementById('page'+num).classList.add('active');
+
+    if(num===4){
+      const venue = encodeURIComponent('The Grand Ballroom, Mumbai');
+      document.getElementById('routeLink').href = `https://www.google.com/maps/dir/?api=1&destination=${venue}`;
+    }
+  }
+</script>
+
+</body>
+</html>
