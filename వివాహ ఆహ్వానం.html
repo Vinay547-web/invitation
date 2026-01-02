@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="te">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Telugu Wedding Invitation</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Noto+Serif+Telugu:wght@400;700&display=swap" rel="stylesheet">
+
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}
+    body{
+      font-family:'Poppins', sans-serif;
+      background:#000;
+      overflow:hidden;
+    }
+
+    /* PAGE STYLE */
+    .page{
+      position:absolute;top:0;left:0;
+      width:100%;height:100vh;
+      display:flex;justify-content:center;align-items:center;
+      background-size:cover;
+      background-position:center;
+      opacity:0;
+      pointer-events:none;
+      transition:1.2s ease;
+    }
+    .active{
+      opacity:1;
+      pointer-events:auto;
+    }
+
+    /* Semi-transparent card */
+    .card{
+      width:90%;max-width:500px;
+      background:rgba(255,255,255,0.20);
+      padding:30px;
+      border-radius:24px;
+      backdrop-filter:blur(15px);
+      border:1px solid rgba(255,255,255,0.35);
+      text-align:center;
+      color:#fff;
+      animation:fadeInUp 1.2s ease;
+    }
+
+    @keyframes fadeInUp{
+      from{opacity:0;transform:translateY(40px)}
+      to{opacity:1;transform:translateY(0)}
+    }
+
+    /* Telugu decorative border */
+    .border{
+      width:100%;height:16px;
+      background-image:url('https://img.freepik.com/free-vector/realistic-ugadi-garland-illustration_52683-57776.jpg?semt=ais_hybrid&w=740&q=80');
+      background-size:contain;
+      background-repeat:repeat-x;
+      margin-bottom:18px;
+    }
+
+    h1,h2,h3{font-family:'Noto Serif Telugu', serif;color:#ffe8b3}
+    p{color:#faf7f2;font-size:17px;margin-top:12px}
+
+    input{
+      width:90%;padding:15px;
+      border-radius:12px;border:none;
+      font-size:20px;
+      font-family:'Noto Serif Telugu';
+      margin-top:18px;text-align:center;
+    }
+
+    button{
+      padding:14px 26px;
+      font-size:18px;
+      border:none;border-radius:14px;
+      background:#ffb13d;color:#4d2600;
+      font-weight:600;
+      cursor:pointer;
+      margin-top:20px;
+    }
+
+    /* Background slides for cinematic effect */
+    .bg-fade{
+      animation:bgSlide 12s infinite alternate ease-in-out;
+    }
+    @keyframes bgSlide{
+      0%{background-size:105%}
+      100%{background-size:115%}
+    }
+
+    .map-img{width:100%;border-radius:20px;margin-top:18px}
+   
+ /* Background audio */
+    audio{display:none}
+
+  </style>
+</head>
+<body>
+
+  <!-- Telugu Traditional Instrumental Background Music -->
+  <audio>
+   <source src="C:\Users\DELL\wedding audio.mp3" type="audio/mp3"/>
+  </audio>
+
+  <!-- PAGE 1: Name Input with Telugu Theme -->
+  <div id="page1" class="page active bg-fade" style="background-image:url('https://png.pngtree.com/png-vector/20240913/ourmid/pngtree-indian-hindu-wedding-mandap-design-havan-and-homam-vector-fire-marigold-png-image_13833059.png');">
+    <div class="card">
+      <div class="border"></div>
+      <h2>మీ పేరు నమోదు చేయండి</h2>
+      <input id="receiverInput" placeholder="మీ పేరు" />
+      <button onclick="goToInvitation()">తరువాత</button>
+      <div class="border"></div>
+    </div>
+  </div>
+
+  <!-- PAGE 2: Wedding Invitation (Mandapam Background) -->
+  <div id="page2" class="page bg-fade" style="background-image:url('https://media.istockphoto.com/id/1314782145/photo/groom-and-bride-holding-green-leaf-and-lord-ganesha-sculpture-in-hand.jpg?s=612x612&w=0&k=20&c=hbocVVURwyEF4dLx4nXvUJMF7YJDw9z4eUuFjk0BGVA=');">
+    <div class="card">
+      <div class="border"></div>
+      <h3>💫చవ్వ వారి వివాహ ఆహ్వానం💫</h3><br>
+      <h3>గౌరవనీయులైన <span id="receiverName"></span> గారికి,</h3>
+      <p>మన తెలుగు సంప్రదాయ పెళ్లికి మిమ్మల్ని ఆహ్వానిస్తున్నాము</p><br>
+      <h2> త్రివేణి 💖 మధన్</h2>
+      <p>01 April 2026 <br> రాత్రి  8:48 నిమిషములకు  </p>
+      <P> నూతన వధూవరులను ఆశీర్వదించి, మా ఆతిథ్యాన్ని స్వీకరించి మరియు మమ్మల్ని ఆనందింపజేస్తారణి  ప్రార్థన. </p>
+      <button onclick="nextPage(3)">వేదిక వివరాలు</button>
+      <div class="border"></div>
+    </div>
+  </div>
+
+  <!-- PAGE 3: Venue Page + Couple Photo -->
+  <div id="page3" class="page bg-fade" style="background-image:url('https://img.freepik.com/free-photo/beautiful-archway-decorated-with-floral-composition-outdoors_8353-10972.jpg?semt=ais_hybrరాత్రిid&w=740&q=80');">
+    <div class="card">
+      <div class="border"></div>
+      <h2>వేదిక వివరాలు</h2>
+      <p style="color:black;"><b>శ్రీ సత్య విజయ ఫంక్షన్ హాల్<br> ప్రత్తిపాడు</b></p>
+      <img class="map-img" src="https://rosepng.com/wp-content/uploads/2024/02/s11728_hindu_wedding_clipart_isolated_on_white_background_-s_3c64db65-051e-4961-9623-e9583f1c9c05_3-photoroom-png-photoroom_11zon.png" />
+      <button onclick="nextPage(4)">రూట్ చూడండి</button>
+      <div class="border"></div>
+    </div>
+  </div>
+
+  <!-- PAGE 4: Route Button (Telugu Art Background) -->
+  <div id="page4" class="page bg-fade" style="background-image:url('https://thumbs.dreamstime.com/b/d-location-pin-green-land-plot-estate-investment-construction-project-generated-ai-317334966.jpg');">
+    <div class="card">
+      <div class="border"></div>
+      <h2>మీ ప్రయాణ రూట్</h2>
+      <p style="color:black;"><b>Google Maps లో రూట్ చూడటానికి కింద క్లిక్ చేయండి</b></p>
+      <a id="routeLink" target="_blank"><button>Open Route</button></a>
+      <div class="border"></div>
+    </div>
+  </div>
+
+<script>
+  function goToInvitation(){
+    const name = document.getElementById('receiverInput').value.trim();
+    if(!name) return alert('Please enter your name');
+    document.getElementById('receiverName').textContent = name;
+    nextPage(2);
+  }
+
+  function nextPage(num){
+    document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+    document.getElementById('page'+num).classList.add('active');
+
+    if(num===4){
+      const venue = encodeURIComponent('SRI SATYA VIJAYA FUNTION HALL PRATHIPADU');
+      document.getElementById('routeLink').href = `https://www.google.com/maps/dir/?api=1&destination=${venue}`;
+    }
+  }
+</script>
+
+</body>
+</html>
