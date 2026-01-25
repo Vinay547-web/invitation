@@ -53,14 +53,14 @@
     /* Telugu decorative border */
     .border{
       width:100%;height:16px;
-      background-image:url('https://i.imgur.com/38xj7pV.png');
+      background-image:url('https://img.freepik.com/free-vector/realistic-ugadi-garland-illustration_52683-57776.jpg?semt=ais_hybrid&w=740&q=80');
       background-size:contain;
       background-repeat:repeat-x;
       margin-bottom:18px;
     }
 
     h1,h2,h3{font-family:'Noto Serif Telugu', serif;color:#ffe8b3}
-    p{color:#ffeccc;font-size:17px;margin-top:12px}
+    p{color:#faf7f2;font-size:17px;margin-top:12px}
 
     input{
       width:90%;padding:15px;
@@ -90,24 +90,24 @@
     }
 
     .map-img{width:100%;border-radius:20px;margin-top:18px}
-
-    /* Background audio */
+   
+ /* Background audio */
     audio{display:none}
+
   </style>
 </head>
 <body>
 
   <!-- Telugu Traditional Instrumental Background Music -->
-  <audio autoplay loop>
-    <source src="C:\Users\USER\Downloads\music.mp3" />
+  <audio>
+   <source src="C:\Users\DELL\wedding audio.mp3" type="audio/mp3"/>
   </audio>
 
   <!-- PAGE 1: Name Input with Telugu Theme -->
-  <div id="page1" class="page active bg-fade" style="background-image:url("C:\Users\USER\Downloads\background.jpg");">
+  <div id="page1" class="page active bg-fade" style="background-image:url('https://png.pngtree.com/png-vector/20240913/ourmid/pngtree-indian-hindu-wedding-mandap-design-havan-and-homam-vector-fire-marigold-png-image_13833059.png');">
     <div class="card">
       <div class="border"></div>
       <h2>మీ పేరు నమోదు చేయండి</h2>
-      <p>వ్యక్తిగత ఆహ్వానం కోసం మీ పేరును టైప్ చేయండి</p>
       <input id="receiverInput" placeholder="మీ పేరు" />
       <button onclick="goToInvitation()">తరువాత</button>
       <div class="border"></div>
@@ -115,36 +115,38 @@
   </div>
 
   <!-- PAGE 2: Wedding Invitation (Mandapam Background) -->
-  <div id="page2" class="page bg-fade" style="background-image:url('https://i.imgur.com/7T8tHh1.jpeg');">
+  <div id="page2" class="page bg-fade" style="background-image:url('https://media.istockphoto.com/id/1314782145/photo/groom-and-bride-holding-green-leaf-and-lord-ganesha-sculpture-in-hand.jpg?s=612x612&w=0&k=20&c=hbocVVURwyEF4dLx4nXvUJMF7YJDw9z4eUuFjk0BGVA=');">
     <div class="card">
       <div class="border"></div>
-      <h3>Dear <span id="receiverName"></span>,</h3>
-      <p>మన తెలుగు సంప్రదాయ పెల్లీకి మిమ్మల్ని ఆహ్వానిస్తున్నాము</p>
-      <h1>Asha ❤️ Rahul</h1>
-      <p>20 December 2025 · సాయంత్రం 6 గంటలకు</p>
+      <h3>💫చవ్వ వారి వివాహ ఆహ్వానం💫</h3><br>
+      <h3>గౌరవనీయులైన <span id="receiverName"></span> గారికి,</h3>
+      <p>మన తెలుగు సంప్రదాయ పెళ్లికి మిమ్మల్ని ఆహ్వానిస్తున్నాము</p><br>
+      <h2> త్రివేణి 💖 మధన్</h2>
+      <p>01 April 2026 <br> రాత్రి  8:48 నిమిషములకు  </p>
+      <P> నూతన వధూవరులను ఆశీర్వదించి, మా ఆతిథ్యాన్ని స్వీకరించి మరియు మమ్మల్ని ఆనందింపజేస్తారణి  ప్రార్థన. </p>
       <button onclick="nextPage(3)">వేదిక వివరాలు</button>
       <div class="border"></div>
     </div>
   </div>
 
   <!-- PAGE 3: Venue Page + Couple Photo -->
-  <div id="page3" class="page bg-fade" style="background-image:url('https://i.imgur.com/kM9gkkM.jpeg');">
+  <div id="page3" class="page bg-fade" style="background-image:url('https://img.freepik.com/free-photo/beautiful-archway-decorated-with-floral-composition-outdoors_8353-10972.jpg?semt=ais_hybrరాత్రిid&w=740&q=80');">
     <div class="card">
       <div class="border"></div>
       <h2>వేదిక వివరాలు</h2>
-      <p>The Grand Ballroom<br>Mumbai</p>
-      <img class="map-img" src="https://i.imgur.com/NDy2W0t.jpeg" />
+      <p style="color:black;"><b>శ్రీ సత్య విజయ ఫంక్షన్ హాల్<br> ప్రత్తిపాడు</b></p>
+      <img class="map-img" src="https://rosepng.com/wp-content/uploads/2024/02/s11728_hindu_wedding_clipart_isolated_on_white_background_-s_3c64db65-051e-4961-9623-e9583f1c9c05_3-photoroom-png-photoroom_11zon.png" />
       <button onclick="nextPage(4)">రూట్ చూడండి</button>
       <div class="border"></div>
     </div>
   </div>
 
   <!-- PAGE 4: Route Button (Telugu Art Background) -->
-  <div id="page4" class="page bg-fade" style="background-image:url('https://i.imgur.com/WSeH8C9.jpeg');">
+  <div id="page4" class="page bg-fade" style="background-image:url('https://thumbs.dreamstime.com/b/d-location-pin-green-land-plot-estate-investment-construction-project-generated-ai-317334966.jpg');">
     <div class="card">
       <div class="border"></div>
       <h2>మీ ప్రయాణ రూట్</h2>
-      <p>Google Maps లో రూట్ చూడటానికి కింద క్లిక్ చేయండి</p>
+      <p style="color:black;"><b>Google Maps లో రూట్ చూడటానికి కింద క్లిక్ చేయండి</b></p>
       <a id="routeLink" target="_blank"><button>Open Route</button></a>
       <div class="border"></div>
     </div>
@@ -163,7 +165,7 @@
     document.getElementById('page'+num).classList.add('active');
 
     if(num===4){
-      const venue = encodeURIComponent('The Grand Ballroom, Mumbai');
+      const venue = encodeURIComponent('SRI SATYA VIJAYA FUNTION HALL PRATHIPADU');
       document.getElementById('routeLink').href = `https://www.google.com/maps/dir/?api=1&destination=${venue}`;
     }
   }
